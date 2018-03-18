@@ -17,3 +17,5 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 alias zat='zathura'
+alias rss='canto-curses'
+alias vag='/usr/bin/vagrant'
