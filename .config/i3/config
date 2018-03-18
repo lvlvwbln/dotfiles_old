@@ -9,13 +9,21 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-exec_always setxkbmap -model abnt2 -layout br -variant abnt2
-
 for_window [class="^.*"] border pixel 3
 gaps inner 15
 gaps outer 15
+
+exec_always setxkbmap -model abnt2 -layout br -variant abnt2
+
+for_window [class="term"] move container to workspace 1
+exec --no-startup-id deepin-terminal
+
+for_window [class="Firefox"] move container to workspace 1
+exec --no-startup-id firefox
+
+assign [class="URxvt"] → number "9: work"
+
 set $mod Mod4
-set $term --no-startup-id xterm-256color
 set $shutdown sudo shutdown -h now
 set $reboot sudo reboot
 
@@ -27,9 +35,6 @@ set $bigdec --no-startup-id pamixer --allow-boost -d 15
 set $mute --no-startup-id pamixer --allow-boost -t
 set $micmute --no-startup-id pamixer --allow-boost -t
 set $truemute --no-startup-id pamixer -m
-
-#Composite manager:
-exec --no-startup-id compton --xrender-sync-fence
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -155,8 +160,8 @@ set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws9 "9 <browsing>"
+set $ws10 "10 <dev>"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
