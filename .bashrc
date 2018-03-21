@@ -19,3 +19,5 @@ fi
 alias zat='zathura'
 alias rss='canto-curses'
 alias vag='/usr/bin/vagrant'
+alias httpserver='python -m http.server 8080'
+alias cpod='dex /usr/share/applications/cumulonimbus.desktop'

@@ -15,13 +15,13 @@ gaps outer 15
 
 exec_always setxkbmap -model abnt2 -layout br -variant abnt2
 
-for_window [class="term"] move container to workspace 1
-exec --no-startup-id deepin-terminal
+#for_window [class="term"] move container to workspace 1
+#exec --no-startup-id deepin-terminal
 
-for_window [class="Firefox"] move container to workspace 1
-exec --no-startup-id firefox
+#for_window [class="Firefox"] move container to workspace 1
+#exec --no-startup-id firefox
 
-assign [class="URxvt"] → number "9: work"
+#assign [class="URxvt"] → number "9: work"
 
 set $mod Mod4
 set $shutdown sudo shutdown -h now
@@ -60,6 +60,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 # programs
 bindsym $mod+d exec rofi -show run
 bindsym $mod+w exec $term -e sudo wifi-menu
+
+# workflow freestyle css
+bindsym $mod+c exec urxvt -hold -e ~/tmuxcss -3
 
 #other stuff
 bindsym $mod+t split toggle
